@@ -1,5 +1,6 @@
-# Sheriff-Mod
-Sheriff Mod is an Among Us modification for Windows, which adds a new Crewmate class to the game.
+# Reactor-Sheriff Mod
+Reactor-Sheriff Mod is an Among Us modification for Windows, which adds a new Crewmate class to the game. This is an adaptation of **[Woodi's Sheriff Mod](https://github.com/Woodi-dev/Among-Us-Sheriff-Mod)** that can run along with Mods created with **[Reactor Framework](https://github.com/NuclearPowered/Reactor)**.
+
 <img src ="Pics/SheriffMod.png" width="1000"></img>
 
 <h3>What does the Sheriff do?</h3>
@@ -11,54 +12,60 @@ The Sheriff is able to kill Impostors. If they shoot a Crewmate, they will lose 
 <li> Custom server regions to join private servers</li>
 </ul>
 
-<h2 id="installation"> Installation </h2>
-<ul>
-<li>Download the Mod for your specific game version. You are not able to launch the game if the versions do not match.</li>
-<li>Make a copy of your game’s root directory (Steam/steamapps/common/Among Us) and rename it to whatever you want (Steam/steamapps/common/Among Us Sheriff Mod) </li>
-<li>Extract the content of Among Us Sheriff Mod.zip into the copied folder you created</li>
-<li>Open your modded folder and open the Game via Among Us.exe</li>
-</ul>
-<p>Verifying installation success<p>
-<ul>
-  <li>Launch the Game via Among Us.exe.
-  <li>In the top-left corner, below Among Us version, you should see <em>loaded Sheriff Mod vx.y by Woodi </em>
-</ul>
-<p>If you don't see this message please take a look at our 
-  <a href="#troubleshooting">troubleshooting section</a>.
-</p>
- 
-<h2>Releases and Compatibility</h2>
- 
- <table style="width:100%">
-  <tr>
-    <th>Among Us Version</th>
-    <th>Mod Version</th>
-    <th>Link</th>
-  </tr>
-   <tr>
-    <td>v2020.12.9s</td>
-    <td>v1.1</td>
-    <td><a href="https://github.com/Woodi-dev/Among-Us-Sheriff-Mod/releases/download/v1.1/Among.Us.Sheriff.Mod.1.1.zip">Download</></td>
-  </tr>
-  <tr>
-    <td>v2020.12.9s</td>
-    <td>v1.01</td>
-    <td><a href="https://github.com/Woodi-dev/Sheriff-Mod/releases/download/v2020.12.9s/Among.Us.Sheriff.Mod.1.01.zip">Download</></td>
-  </tr>
+## Installation
+Every player in your lobby need to install Reactor-Sheriff Mod. There are two ways to install the mod :
+- **All-in-one pack _(Easiest)_:** The easiest way to install the mod.
+- **Custom install _(Advanced/Recommended)_:** Download and install everything by yourself.
 
-</table>
+### All-in-one pack
+1. Download the pack for your game version in the **[Releases section](#releases)** below.
+2. Extract the content of the zip file into your game folder (**`Steam/steamapps/common/Among Us`**).
+3. Run the game from Steam.
+
+### Custom install
+1. Install Reactor BepInEx by following **[these instructions](https://docs.reactor.gg/docs/basic/install_bepinex/)**.
+2. Install Reactor by following **[these instructions](https://docs.reactor.gg/docs/basic/install_reactor)**.
+3. Download the **dll file** for your game version in the **[Releases section](#releases)** below.
+4. Copy the dll file into **`Among Us/BepInEx/plugins`**.
+5. (Optional) If you want to play on official servers, you must do the following :
+    - Open **`Among us/BepInEx/config/gg.reactor.api.cfg`** with a text editor.
+    - Find the line `Modded handshake = true` and change it to `Modded handshake = false`.
+    - Save and close your editor.
+ 
+<h2>Releases</h2>
+
+ | Among Us Version | Mod Version | All-in-one pack | DLL file |
+ | :--------------: | :---------: | :-------------: | :------: |
+ | v2020.12.9s      | Ver. 1.1-R  |[**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.1/ReactorSheriff-v1.1.zip) | [**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.1/ReactorSheriff-2020.12.9s.dll) |
+
 <details>
-  <summary>Changelog</summary>
-   <h3>v1.1</h3>
+  <summary><b>Changelog</b></summary>
+   <h3>v1.1-R</h3>
    <ul>
     <li>Added Sheriff kill cooldown option to the game lobby</li>
     <li>Added q shortcut to kill as Sheriff</li>
     <li>Kill distance of Impostor and Sheriff are now the same</li>
     <li>Fixed a bug where the outline of the target disappears (Impostor)</li>
     <li>Several nullpointer bugfixes</li>
+    <li>Adapted the mod to be compatible with Reactor Framework</li>
    </ul>
-</details>
-Check out Sheriff Mod on CurseForge: <a href="https://www.curseforge.com/among-us/mods/sheriff-mod">https://www.curseforge.com/among-us/mods/sheriff-mod</a>
+</details>   
+ 
+ ## Uninstall
+ ### Uninstall Reactor-Sheriff
+ To uninstall Reactor-Sheriff, simply delete the ReactorSheriff dll file from **`Among Us/BepInEx/plugins`**.
+ 
+ ### Uninstall Reactor/BepInEx
+ To completely uninstall everything, either uninstall/reinstall the game from steam or remove the following files and directories :
+ ```
+-- BepInEx/
+-- mono/
+-- changelog.txt
+-- doorstop_config.ini
+-- steam_appid.txt
+-- winhttp.dll
+```
+
 <h2>Q&A</h2>
  
 <p><b>Can you play Proximity Chat (Crewlink) with it?</b></br>
@@ -66,32 +73,22 @@ Yes Crewlink does support Among Us Modifications.</p>
 <p><b>Can you get banned for playing on public Servers?</b></br>
 At the current state of the game there is no perma ban system for the game. The mod is designed in a way, that it does not send prohibited server requests.
 You are also able to join your own custom server to be safe <a href="https://github.com/Impostor/Impostor">(Impostor)</a></p>
-<p><b>How can i join a custom server?</b></br>
+<p><b>How can I join a custom server?</b></br>
 Go to your game directory and open BepInEx/config/org.bepinex.plugins.SheriffMod.txt. There you can set the hostname or IP of the server. Then set the server region to CUSTOM.</p>
 <p><b>Do my friends need to install the mod to play it together?</b></br>
 Yes. Every player in the game lobby has to install it.</p>
-<h2>Donate</h2>
-
-<a href="https://www.paypal.com/donate?hosted_button_id=TWGK7A9VBVPRU"><img src ="https://www.paypalobjects.com/en_US/DK/i/btn/btn_donateCC_LG.gif" alt="Donate with PayPal button" ></img></a>
-
-
-I would appreciate any donations. This will help me to develop more mods.
-
-For exclusive modding requests contact me: <a href="mailto:Woodi-dev@gmx.de">Woodi-dev@gmx.de</a>
-
 <h2 id="troubleshooting">Troubleshooting</h2>
 
-<p><b>I can't see <em>loaded</em> message on my game screen</b></br>
+<p><b>I can't see <em>loaded</em> message on my game screen</b></p></br>
 <ol>
   <li>Make sure you have followed all the <a href="#installation">installation steps</a>, especially launching the game via the Among Us.exe file</li>
   <li>You might be missing some cpp libs (software libraries used by the mod); please install 
     <a href="https://aka.ms/vs/16/release/vc_redist.x86.exe">visual studio c++</a>
   </li>
 </ol>
-</p>
 
 <p><b>I can't find my issue.</b></br>
-You can <a href="https://github.com/Woodi-dev/Among-Us-Sheriff-Mod/issues/new">raise an issue within GitHub</a> documenting your issue. You will need to be logged into GitHub to do this.
+You can <a href="https://github.com/Brybry16/Reactor-Sheriff/issues/new">raise an issue within GitHub</a> documenting your issue. You will need to be logged into GitHub to do this.
 </p>
 
 <h2>License</h2>
