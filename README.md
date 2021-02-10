@@ -36,10 +36,18 @@ Every player in your lobby need to install Reactor-Sheriff Mod. There are two wa
 
  | Among Us Version | Mod Version | All-in-one pack | DLL file |
  | :--------------: | :---------: | :-------------: | :------: |
+ | v2020.12.9s      | Ver. 1.2-R  |[**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.2/ReactorSheriff-v1.2.zip) | [**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.2/ReactorSheriff-2020.12.9s.dll) |
  | v2020.12.9s      | Ver. 1.1-R  |[**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.1/ReactorSheriff-v1.1.zip) | [**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.1/ReactorSheriff-2020.12.9s.dll) |
 
 <details>
   <summary><b>Changelog</b></summary>
+   <h3>v1.2-R</h3>
+   <ul>
+    <li>Fixed Sheriff being able to kill impostors in vent</li>
+    <li>Fixed Sheriff being able to kill while in a task</li>
+    <li>Fixed Sheriff being able to kill while in Vitals/Admin</li>
+   </ul>
+  
    <h3>v1.1-R</h3>
    <ul>
     <li>Added Sheriff kill cooldown option to the game lobby</li>
