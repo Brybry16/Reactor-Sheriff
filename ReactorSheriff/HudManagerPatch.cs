@@ -83,7 +83,7 @@ namespace ReactorSheriff
                 {
 
                     PlayerControl.LocalPlayer.nameText.Color = new Color(1, (float)(204.0 / 255.0), 0, 1);
-                    if (PlayerControl.LocalPlayer.Field_6.IsDead)
+                    if (PlayerControl.LocalPlayer.Field_6.IsDead || PlayerControlPatch.sheriffInTask)
                     { 
                         KillButton.gameObject.SetActive(false);
                         KillButton.isActive = false;
@@ -100,7 +100,7 @@ namespace ReactorSheriff
                             KillButton.SetTarget(PlayerControlPatch.closestPlayer);
                         } 
                         
-                        if (Input.GetKeyInt(KeyCode.Q))
+                        if (Input.GetKeyInt(KeyCode.Q) && !PlayerControlPatch.sheriffInAdmin)
                         {
                             KillButton.PerformKill();
                         }

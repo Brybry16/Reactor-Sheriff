@@ -59,6 +59,8 @@ namespace ReactorSheriff
     {
         public static PlayerControl closestPlayer = null;
         public static PlayerControl Sheriff;
+        public static bool sheriffInTask;
+        public static bool sheriffInAdmin;
         public static DateTime lastKilled;
         
         [HarmonyPatch(nameof(PlayerControl.HandleRpc))]
@@ -118,6 +120,22 @@ namespace ReactorSheriff
                 return false;
             
             return player.PlayerId == Sheriff.PlayerId;
+        }
+
+        public static void changeTaskState(bool active)
+        {
+            if (isSheriff(PlayerControl.LocalPlayer) && sheriffInTask != active)
+            {
+                sheriffInTask = active;
+            }
+        }
+
+        public static void changeAdminState(bool active)
+        {
+            if (isSheriff(PlayerControl.LocalPlayer) && sheriffInAdmin != active)
+            {
+                sheriffInAdmin = active;
+            }
         }
 
         public static PlayerControl getPlayerById(byte id)
@@ -180,9 +198,9 @@ namespace ReactorSheriff
             PlayerControl closestplayer = null;
             foreach (PlayerControl player in PlayerControl.AllPlayerControls)
             {
-                if (player.Field_6.IsDead)
+                if (player.Field_6.IsDead || player.inVent)
                     continue;
-                
+
                 if (player.PlayerId != refplayer.PlayerId)
                 {
 
@@ -216,10 +234,12 @@ namespace ReactorSheriff
             
             System.Random r = new System.Random();
             Sheriff = crewmates[r.Next(0, crewmates.Count)];
+            
             if (CustomGameOptions.ShowSheriff)
             {
                 Sheriff.nameText.Color = new Color(1, (float)(204.0 / 255.0), 0, 1);
             }
+            
             byte SheriffId = Sheriff.PlayerId;
 
             writer.Write(SheriffId);
