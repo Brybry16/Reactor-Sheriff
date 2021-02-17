@@ -18,6 +18,7 @@ namespace ReactorSheriff
         static System.Random random = new System.Random();
         static string GameSettingsText = null;
 
+        public static bool isMeetingHudActive;
 
 
       
@@ -55,7 +56,11 @@ namespace ReactorSheriff
         {
             foreach (PlayerVoteArea playerVoteArea in __instance.playerStates)
             {
-                if (playerVoteArea.NameText.Text == PlayerControlPatch.Sheriff.name)
+                if (PlayerControlPatch.Sheriff == null)
+                {
+                    SheriffReactorMod.log.LogMessage("PlayerControlPatch.Sheriff IS NULL CT CA MDR");
+                }
+                if (PlayerControlPatch.Sheriff != null && playerVoteArea.NameText.Text == PlayerControlPatch.Sheriff.name)
                 {
                     if (CustomGameOptions.ShowSheriff | PlayerControlPatch.isSheriff(PlayerControl.LocalPlayer))
                     {
@@ -69,7 +74,9 @@ namespace ReactorSheriff
         public static void Postfix(HudManager __instance)
         {
             KillButton = __instance.KillButton;
-            if (MeetingHud.Instance != null)
+            isMeetingHudActive = MeetingHud.Instance != null;
+
+            if (isMeetingHudActive)
             {
                 updateMeetingHud(MeetingHud.Instance);
             }
@@ -83,7 +90,7 @@ namespace ReactorSheriff
                 {
 
                     PlayerControl.LocalPlayer.nameText.Color = new Color(1, (float)(204.0 / 255.0), 0, 1);
-                    if (PlayerControl.LocalPlayer.Field_6.IsDead || PlayerControlPatch.sheriffInTask)
+                    if (PlayerControl.LocalPlayer.Field_6.IsDead || PlayerControlPatch.sheriffInTask || isMeetingHudActive)
                     { 
                         KillButton.gameObject.SetActive(false);
                         KillButton.isActive = false;
@@ -147,7 +154,6 @@ namespace ReactorSheriff
         {
             PlayerControlPatch.lastKilled = DateTime.UtcNow;
             PlayerControlPatch.lastKilled = PlayerControlPatch.lastKilled.AddSeconds(8);
-
         }
     }
 }
