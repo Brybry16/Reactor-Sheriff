@@ -89,7 +89,7 @@ namespace ReactorSheriff
                 CustomGameOptions.ShowSheriff = !CustomGameOptions.ShowSheriff;
                 PlayerControl.LocalPlayer.RpcSyncSettings(PlayerControl.GameOptions);
 
-                __instance.Field_2 = CustomGameOptions.ShowSheriff;
+                __instance.oldValue = CustomGameOptions.ShowSheriff;
                 __instance.CheckMark.enabled = CustomGameOptions.ShowSheriff;
                 
                 return false;

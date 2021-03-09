@@ -56,10 +56,6 @@ namespace ReactorSheriff
         {
             foreach (PlayerVoteArea playerVoteArea in __instance.playerStates)
             {
-                if (PlayerControlPatch.Sheriff == null)
-                {
-                    SheriffReactorMod.log.LogMessage("PlayerControlPatch.Sheriff IS NULL CT CA MDR");
-                }
                 if (PlayerControlPatch.Sheriff != null && playerVoteArea.NameText.Text == PlayerControlPatch.Sheriff.name)
                 {
                     if (CustomGameOptions.ShowSheriff | PlayerControlPatch.isSheriff(PlayerControl.LocalPlayer))
@@ -85,12 +81,13 @@ namespace ReactorSheriff
       
             if (PlayerControl.AllPlayerControls.Count > 1 & PlayerControlPatch.Sheriff != null)
             {
-
                 if (PlayerControlPatch.isSheriff(PlayerControl.LocalPlayer))
                 {
 
                     PlayerControl.LocalPlayer.nameText.Color = new Color(1, (float)(204.0 / 255.0), 0, 1);
-                    if (PlayerControl.LocalPlayer.Field_6.IsDead || PlayerControlPatch.sheriffInTask || isMeetingHudActive)
+                    
+                    
+                    if (false || PlayerControlPatch.sheriffInTask || isMeetingHudActive)
                     { 
                         KillButton.gameObject.SetActive(false);
                         KillButton.isActive = false;
@@ -113,9 +110,9 @@ namespace ReactorSheriff
                         }
                     }
                 }
-                else if (PlayerControl.LocalPlayer.Field_6.IsImpostor)
+                else if (PlayerControl.LocalPlayer.Data.LGEGJEHCFOG) // isImpostor
                 {
-                    if (PlayerControl.LocalPlayer.Field_6.IsDead)
+                    if (PlayerControl.LocalPlayer.Data.AKOHOAJIHBE) // isDead
                     {
                         KillButton.gameObject.SetActive(false);
                         KillButton.isActive = false;

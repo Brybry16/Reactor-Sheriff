@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace ReactorSheriff
 {
-    [HarmonyPatch(typeof(IntroCutscene.CoBegin__d))]
+    [HarmonyPatch(typeof(IntroCutscene.Nested_0))]
     public static class IntroCutScenePatch
     {
-        [HarmonyPatch(nameof(IntroCutscene.CoBegin__d.MoveNext))]
-        public static void Postfix(IntroCutscene.CoBegin__d __instance)
+        [HarmonyPatch(nameof(IntroCutscene.Nested_0.MoveNext))]
+        public static void Postfix(IntroCutscene.Nested_0 __instance)
         {
             if (PlayerControlPatch.isSheriff(PlayerControl.LocalPlayer))
             {
