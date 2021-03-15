@@ -87,7 +87,7 @@ namespace ReactorSheriff
                     PlayerControl.LocalPlayer.nameText.Color = new Color(1, (float)(204.0 / 255.0), 0, 1);
                     
                     
-                    if (false || PlayerControlPatch.sheriffInTask || isMeetingHudActive)
+                    if (PlayerControl.LocalPlayer.Data.AKOHOAJIHBE || PlayerControlPatch.sheriffInTask || isMeetingHudActive) // isDead
                     { 
                         KillButton.gameObject.SetActive(false);
                         KillButton.isActive = false;

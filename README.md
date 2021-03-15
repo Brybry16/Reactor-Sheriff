@@ -36,19 +36,25 @@ Every player in your lobby need to install Reactor-Sheriff Mod. There are two wa
 
  | Among Us Version | Mod Version | All-in-one pack | DLL file |
  | :--------------: | :---------: | :-------------: | :------: |
+ | v2021.3.5s       | Ver. 1.2.2-R |[**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.2.2/ReactorSheriff-v1.2.2.zip) | [**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.2.2/ReactorSheriff-2021.3.5s.dll) |
  | v2021.3.5s       | Ver. 1.2.1-R |[**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.2.1/ReactorSheriff-v1.2.1.zip) | [**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.2.1/ReactorSheriff-2021.3.5s.dll) |
  | v2020.12.9s      | Ver. 1.2-R   |[**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.2/ReactorSheriff-v1.2.zip) | [**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.2/ReactorSheriff-2020.12.9s.dll) |
  | v2020.12.9s      | Ver. 1.1-R   |[**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.1/ReactorSheriff-v1.1.zip) | [**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.1/ReactorSheriff-2020.12.9s.dll) |
 
 <details>
   <summary><b>Changelog</b></summary>
+   <h3>v1.2.2-R</h3>
+   <ul>
+    <li>Fixed KillButton being enabled when the Sheriff is dead</li>
+   </ul>
+
    <h3>v1.2.1-R</h3>
    <ul>
     <li>The mod is now compatible with Among Us v2021.3.5</li>
     <li>Fixed Sheriff being able use the Kill Button while in meeting</li>
     <li>Stability improvements</li>
    </ul>
-   
+
    <h3>v1.2-R</h3>
    <ul>
     <li>Fixed Sheriff being able to kill impostors in vent</li>
