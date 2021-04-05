@@ -111,7 +111,7 @@ namespace ReactorSheriff
             {
                 CustomGameOptions.SheriffKillCD = Math.Min(CustomGameOptions.SheriffKillCD + 2.5f, 45);
                 PlayerControl.LocalPlayer.RpcSyncSettings(PlayerControl.GameOptions);
-                __instance.Field_3 = CustomGameOptions.SheriffKillCD;
+                __instance.oldValue = CustomGameOptions.SheriffKillCD;
                 __instance.Value = CustomGameOptions.SheriffKillCD;
                 __instance.ValueText.Text = CustomGameOptions.SheriffKillCD.ToString();
                 return false;
@@ -129,7 +129,7 @@ namespace ReactorSheriff
                 CustomGameOptions.SheriffKillCD = Math.Max(CustomGameOptions.SheriffKillCD - 2.5f, 10);
 
                 PlayerControl.LocalPlayer.RpcSyncSettings(PlayerControl.GameOptions);
-                __instance.Field_3 = CustomGameOptions.SheriffKillCD;
+                __instance.oldValue = CustomGameOptions.SheriffKillCD;
                 __instance.Value = CustomGameOptions.SheriffKillCD;
                 __instance.ValueText.Text = CustomGameOptions.SheriffKillCD.ToString();
                 

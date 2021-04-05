@@ -20,7 +20,7 @@ namespace ReactorSheriff
                     
                     if (dist < GameOptionsData.KillDistances[PlayerControl.GameOptions.KillDistance])
                     {
-                        if (PlayerControlPatch.closestPlayer.Data.LGEGJEHCFOG == false) // isImpostor
+                        if (PlayerControlPatch.closestPlayer.Data.IsImpostor == false)
                         {
                             MessageWriter writer = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte)CustomRPC.SheriffKill, Hazel.SendOption.None, -1);
                             writer.Write(PlayerControl.LocalPlayer.PlayerId);
