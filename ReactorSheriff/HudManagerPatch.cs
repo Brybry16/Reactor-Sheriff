@@ -87,7 +87,7 @@ namespace ReactorSheriff
                     PlayerControl.LocalPlayer.nameText.Color = new Color(1, (float)(204.0 / 255.0), 0, 1);
                     
                     
-                    if (PlayerControl.LocalPlayer.Data.AKOHOAJIHBE || PlayerControlPatch.sheriffInTask || isMeetingHudActive) // isDead
+                    if (PlayerControl.LocalPlayer.Data.IsDead || PlayerControlPatch.sheriffInTask || isMeetingHudActive)
                     { 
                         KillButton.gameObject.SetActive(false);
                         KillButton.isActive = false;
@@ -110,9 +110,9 @@ namespace ReactorSheriff
                         }
                     }
                 }
-                else if (PlayerControl.LocalPlayer.Data.LGEGJEHCFOG) // isImpostor
+                else if (PlayerControl.LocalPlayer.Data.IsImpostor)
                 {
-                    if (PlayerControl.LocalPlayer.Data.AKOHOAJIHBE) // isDead
+                    if (PlayerControl.LocalPlayer.Data.IsDead)
                     {
                         KillButton.gameObject.SetActive(false);
                         KillButton.isActive = false;
