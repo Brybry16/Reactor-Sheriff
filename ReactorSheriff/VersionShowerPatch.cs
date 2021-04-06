@@ -8,7 +8,7 @@ namespace ReactorSheriff
         // Methods
         public static void Postfix(VersionShower __instance)
         {
-            __instance.text.Text += "\nLoaded [F7C600FF]Sheriff Mod v1.2.2-R[] by Brybry";
+            __instance.text.Text += "\nLoaded [F7C600FF]Sheriff Mod v1.2.3-R[] by Brybry";
         }
     }
 

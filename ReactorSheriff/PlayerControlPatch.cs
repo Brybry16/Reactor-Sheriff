@@ -164,7 +164,7 @@ namespace ReactorSheriff
             
             return (KillCoolDown - (float)diff.TotalMilliseconds) / 1000.0f;
         }
-        public static List<PlayerControl> getCrewMates(Il2CppReferenceArray<GameData.Nested_1> infection)
+        public static List<PlayerControl> getCrewMates(Il2CppReferenceArray<GameData.PlayerInfo> infection)
         {
             List<PlayerControl> CrewmateIds = new List<PlayerControl>();
             
@@ -172,10 +172,10 @@ namespace ReactorSheriff
             {
 
                 bool isInfected = false;
-                foreach (GameData.Nested_1 infected in infection)
+                foreach (GameData.PlayerInfo infected in infection)
                 {
 
-                    if (player.PlayerId == infected.CBEJMNMADDB.PlayerId)
+                    if (player.PlayerId == infected.Object.PlayerId)
                     {
                         isInfected = true;
 
@@ -198,7 +198,7 @@ namespace ReactorSheriff
             PlayerControl closestplayer = null;
             foreach (PlayerControl player in PlayerControl.AllPlayerControls)
             {
-                if (player.Data.AKOHOAJIHBE || player.inVent) // player.Data.isDead
+                if (player.Data.IsDead || player.inVent)
                     continue;
 
                 if (player.PlayerId != refplayer.PlayerId)
@@ -227,7 +227,7 @@ namespace ReactorSheriff
         }
 
         [HarmonyPatch(nameof(PlayerControl.RpcSetInfected))]
-        public static void Postfix([HarmonyArgument(0)] Il2CppReferenceArray<GameData.Nested_1> PlayerInfos)
+        public static void Postfix([HarmonyArgument(0)] Il2CppReferenceArray<GameData.PlayerInfo> PlayerInfos)
         {
             MessageWriter writer = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte)CustomRPC.SetSheriff, Hazel.SendOption.None, -1);
             List<PlayerControl> crewmates = getCrewMates(PlayerInfos);
@@ -254,7 +254,7 @@ namespace ReactorSheriff
             {
                 if (__instance.PlayerId == Sheriff.PlayerId)
                 {
-                    __instance.Data.LGEGJEHCFOG = true;    // isImpostor
+                    __instance.Data.IsImpostor = true;
 
                 }
             }
@@ -268,7 +268,7 @@ namespace ReactorSheriff
             {
                 if (__instance.PlayerId == Sheriff.PlayerId)
                 {
-                    __instance.Data.LGEGJEHCFOG = false;    // isImpostor
+                    __instance.Data.IsImpostor = false;
                 }
             }
         }
