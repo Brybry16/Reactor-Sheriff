@@ -2,6 +2,7 @@
 using BepInEx.IL2CPP;
 using HarmonyLib;
 using Reactor;
+using Reactor.Patches;
 
 namespace ReactorSheriff
 {
@@ -25,6 +26,13 @@ namespace ReactorSheriff
         {
             log.LogMessage("Sheriff Mod loaded");
 
+            ReactorVersionShower.TextUpdated += (text) =>
+            {
+                int index = text.Text.LastIndexOf('\n');
+                text.Text = text.Text.Insert(index == -1 ? text.Text.Length - 1 : index, 
+                    "\nLoaded [F7C600FF]Sheriff Mod v1.2.3-R[] by Brybry");
+            };
+            
             Harmony.PatchAll();
         }
     }
