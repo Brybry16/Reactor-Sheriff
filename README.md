@@ -27,7 +27,7 @@ Every player in your lobby need to install Reactor-Sheriff Mod. There are two wa
 2. Install Reactor by following **[these instructions](https://docs.reactor.gg/docs/basic/install_reactor)**.
 3. Download the **dll file** for your game version in the **[Releases section](#releases)** below.
 4. Copy the dll file into **`Among Us/BepInEx/plugins`**.
-5. (Optional) If you want to play on official servers, you must do the following :
+5. (Optional) If you want to play on official servers, you must do the following (**doesn't work anymore since v2021.3.31s**) :
     - Open **`Among us/BepInEx/config/gg.reactor.api.cfg`** with a text editor.
     - Find the line `Modded handshake = true` and change it to `Modded handshake = false`.
     - Save and close your editor.
@@ -36,6 +36,7 @@ Every player in your lobby need to install Reactor-Sheriff Mod. There are two wa
 
  | Among Us Version | Mod Version | All-in-one pack | DLL file |
  | :--------------: | :---------: | :-------------: | :------: |
+ | v2021.3.31.3s    | Ver. 1.2.3-R |[**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.2.3/ReactorSheriff-v1.2.3.zip) | [**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.2.3/ReactorSheriff-2021.3.31.3s.dll) |
  | v2021.3.5s       | Ver. 1.2.2-R |[**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.2.2/ReactorSheriff-v1.2.2.zip) | [**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.2.2/ReactorSheriff-2021.3.5s.dll) |
  | v2021.3.5s       | Ver. 1.2.1-R |[**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.2.1/ReactorSheriff-v1.2.1.zip) | [**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.2.1/ReactorSheriff-2021.3.5s.dll) |
  | v2020.12.9s      | Ver. 1.2-R   |[**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.2/ReactorSheriff-v1.2.zip) | [**Download**](https://github.com/Brybry16/Reactor-Sheriff/releases/download/v1.2/ReactorSheriff-2020.12.9s.dll) |
@@ -43,6 +44,12 @@ Every player in your lobby need to install Reactor-Sheriff Mod. There are two wa
 
 <details>
   <summary><b>Changelog</b></summary>
+   <h3>v1.2.3-R</h3>
+   <ul>
+    <li>Updated the mod for Among Us v2021.3.31.3</li>
+    <li>Fixed Version Shower</li>
+   </ul>
+   
    <h3>v1.2.2-R</h3>
    <ul>
     <li>Fixed KillButton being enabled when the Sheriff is dead</li>
