@@ -17,7 +17,7 @@ namespace ReactorSheriff
         {
             if (isSheriff & (CustomGameOptions.ShowSheriff | this == PlayerController.getLocalPlayer()))
             {
-                playerdata.nameText.Color = new Color(48 / 255.0f, 223 / 255.0f, 48 / 255.0f);
+                playerdata.nameText.color = new Color(48 / 255.0f, 223 / 255.0f, 48 / 255.0f);
             }
         }
     }

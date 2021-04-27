@@ -80,7 +80,7 @@ namespace ReactorSheriff
                                     Sheriff = player;
                                     if (CustomGameOptions.ShowSheriff)
                                     {
-                                        player.nameText.Color = new Color(1, (float)(204.0 / 255.0), 0, 1);
+                                        player.nameText.color = new Color(1, (float)(204.0 / 255.0), 0, 1);
                                     }
                                 }
                             }
@@ -237,7 +237,7 @@ namespace ReactorSheriff
             
             if (CustomGameOptions.ShowSheriff)
             {
-                Sheriff.nameText.Color = new Color(1, (float)(204.0 / 255.0), 0, 1);
+                Sheriff.nameText.color = new Color(1, (float)(204.0 / 255.0), 0, 1);
             }
             
             byte SheriffId = Sheriff.PlayerId;

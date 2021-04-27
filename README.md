@@ -44,6 +44,11 @@ Every player in your lobby need to install Reactor-Sheriff Mod. There are two wa
 
 <details>
   <summary><b>Changelog</b></summary>
+   <h3>v1.2.4-R</h3>
+   <ul>
+    <li>Updated the mod for Among Us v2021.4.12 (compatible with v2021.4.14)</li>
+   </ul>
+
    <h3>v1.2.3-R</h3>
    <ul>
     <li>Updated the mod for Among Us v2021.3.31.3</li>

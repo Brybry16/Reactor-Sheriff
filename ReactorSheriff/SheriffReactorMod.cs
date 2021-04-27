@@ -28,9 +28,9 @@ namespace ReactorSheriff
 
             ReactorVersionShower.TextUpdated += (text) =>
             {
-                int index = text.Text.LastIndexOf('\n');
-                text.Text = text.Text.Insert(index == -1 ? text.Text.Length - 1 : index, 
-                    "\nLoaded [F7C600FF]Sheriff Mod v1.2.3-R[] by Brybry");
+                int index = text.text.LastIndexOf('\n');
+                text.text = text.text.Insert(index == -1 ? text.text.Length - 1 : index, 
+                    "\nLoaded <color=#F7C600FF>Sheriff Mod v1.2.4-R</color> by Brybry");
             };
             
             Harmony.PatchAll();

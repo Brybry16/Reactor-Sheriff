@@ -31,7 +31,7 @@ namespace ReactorSheriff
             ToggleOption toggle = UnityEngine.Object.Instantiate(instance.GetComponentsInChildren<ToggleOption>().Last(),
                 instance.transform);
             PositionElement(toggle);
-            toggle.TitleText.Text = title;
+            toggle.TitleText.text = title;
             toggle.CheckMark.enabled = enabled;
 
             return toggle;
@@ -44,9 +44,9 @@ namespace ReactorSheriff
 
             PositionElement(option);
             option.gameObject.name = title;
-            option.TitleText.Text = title;
+            option.TitleText.text = title;
             option.Value = value;
-            option.ValueText.Text = value.ToString();
+            option.ValueText.text = value.ToString();
 
             return option;
         }
@@ -84,7 +84,7 @@ namespace ReactorSheriff
         [HarmonyPatch(nameof(ToggleOption.Toggle))]
         public static bool Prefix(ToggleOption __instance)
         {
-            if (__instance.TitleText.Text == GameOptionsMenuPatch.ShowSheriffOption.TitleText.Text)
+            if (__instance.TitleText.text == GameOptionsMenuPatch.ShowSheriffOption.TitleText.text)
             {
                 CustomGameOptions.ShowSheriff = !CustomGameOptions.ShowSheriff;
                 PlayerControl.LocalPlayer.RpcSyncSettings(PlayerControl.GameOptions);
@@ -107,13 +107,13 @@ namespace ReactorSheriff
         [HarmonyPatch(nameof(NumberOption.Increase))]
         public static bool Prefix1(NumberOption __instance)
         {
-            if (__instance.TitleText.Text == GameOptionsMenuPatch.SheriffCooldown.TitleText.Text)
+            if (__instance.TitleText.text == GameOptionsMenuPatch.SheriffCooldown.TitleText.text)
             {
                 CustomGameOptions.SheriffKillCD = Math.Min(CustomGameOptions.SheriffKillCD + 2.5f, 45);
                 PlayerControl.LocalPlayer.RpcSyncSettings(PlayerControl.GameOptions);
                 __instance.oldValue = CustomGameOptions.SheriffKillCD;
                 __instance.Value = CustomGameOptions.SheriffKillCD;
-                __instance.ValueText.Text = CustomGameOptions.SheriffKillCD.ToString();
+                __instance.ValueText.text = CustomGameOptions.SheriffKillCD.ToString();
                 return false;
             }
 
@@ -124,14 +124,14 @@ namespace ReactorSheriff
         [HarmonyPatch(nameof(NumberOption.Decrease))]
         public static bool Prefix2(NumberOption __instance)
         {
-            if (__instance.TitleText.Text == GameOptionsMenuPatch.SheriffCooldown.TitleText.Text)
+            if (__instance.TitleText.text == GameOptionsMenuPatch.SheriffCooldown.TitleText.text)
             {
                 CustomGameOptions.SheriffKillCD = Math.Max(CustomGameOptions.SheriffKillCD - 2.5f, 10);
 
                 PlayerControl.LocalPlayer.RpcSyncSettings(PlayerControl.GameOptions);
                 __instance.oldValue = CustomGameOptions.SheriffKillCD;
                 __instance.Value = CustomGameOptions.SheriffKillCD;
-                __instance.ValueText.Text = CustomGameOptions.SheriffKillCD.ToString();
+                __instance.ValueText.text = CustomGameOptions.SheriffKillCD.ToString();
                 
                 return false;
             }
