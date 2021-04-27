@@ -24,19 +24,19 @@ namespace ReactorSheriff
       
         public static void UpdateGameSettingsText(HudManager __instance)
         {
-            if (__instance.GameSettings.Text.Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries).Count() == 19)
+            if (__instance.GameSettings.text.Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries).Count() == 19)
             {
-                GameSettingsText = __instance.GameSettings.Text;
+                GameSettingsText = __instance.GameSettings.text;
             }
             
             if (GameSettingsText != null)
             {
                 if (CustomGameOptions.ShowSheriff)
-                    __instance.GameSettings.Text = GameSettingsText + "Show Sheriff: On" + "\n";
+                    __instance.GameSettings.text = GameSettingsText + "Show Sheriff: On" + "\n";
                 else
-                    __instance.GameSettings.Text = GameSettingsText + "Show Sheriff: Off" + "\n";
+                    __instance.GameSettings.text = GameSettingsText + "Show Sheriff: Off" + "\n";
                 
-                __instance.GameSettings.Text += "Sheriff Kill Cooldown: " + CustomGameOptions.SheriffKillCD.ToString() + "s";
+                __instance.GameSettings.text += "Sheriff Kill Cooldown: " + CustomGameOptions.SheriffKillCD.ToString() + "s";
             }
 
         }
@@ -56,11 +56,11 @@ namespace ReactorSheriff
         {
             foreach (PlayerVoteArea playerVoteArea in __instance.playerStates)
             {
-                if (PlayerControlPatch.Sheriff != null && playerVoteArea.NameText.Text == PlayerControlPatch.Sheriff.name)
+                if (PlayerControlPatch.Sheriff != null && playerVoteArea.NameText.text == PlayerControlPatch.Sheriff.name)
                 {
                     if (CustomGameOptions.ShowSheriff | PlayerControlPatch.isSheriff(PlayerControl.LocalPlayer))
                     {
-                        playerVoteArea.NameText.Color = new Color(1, (float)(204.0 / 255.0), 0, 1);
+                        playerVoteArea.NameText.color = new Color(1, (float)(204.0 / 255.0), 0, 1);
                     }
                 }
             }
@@ -84,7 +84,7 @@ namespace ReactorSheriff
                 if (PlayerControlPatch.isSheriff(PlayerControl.LocalPlayer))
                 {
 
-                    PlayerControl.LocalPlayer.nameText.Color = new Color(1, (float)(204.0 / 255.0), 0, 1);
+                    PlayerControl.LocalPlayer.nameText.color = new Color(1, (float)(204.0 / 255.0), 0, 1);
                     
                     
                     if (PlayerControl.LocalPlayer.Data.IsDead || PlayerControlPatch.sheriffInTask || isMeetingHudActive)
